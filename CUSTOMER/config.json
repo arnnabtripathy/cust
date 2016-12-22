@@ -1,0 +1,76 @@
+{
+    "configurations": [
+        {
+            "name": "test",
+            "policies": [
+            	{
+            		"name":"apiquota.xml",
+            		"tokens": [
+            			{
+            				"xpath": "/Quota/Interval",
+                         	"value": "10"
+                        }
+            		]
+            	}
+            ],
+            "proxies": [
+                {
+                    "name": "default.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ProxyEndpoint/HTTPProxyConnection/BasePath",
+                            "value": "/v2/Customer"
+                        }
+                    ]
+                }
+            ],
+            "targets": [
+                {
+                    "name": "default.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/TargetEndpoint/HTTPTargetConnection/URL",
+                            "value": "https://arnnabtripathy-test.apigee.net/v1/party"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "prod",
+            "policies": [
+               {
+            		"name":"apiquota.xml",
+            		"tokens": [
+            			{
+            				"xpath": "/Quota/Interval",
+                         	"value": "200"
+                        }
+            		]
+            	}
+            ],
+            "proxies": [
+                {
+                    "name": "default.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/ProxyEndpoint/HTTPProxyConnection/BasePath",
+                            "value": "/v1/PartyGit"
+                        }
+                    ]
+                }
+            ],
+            "targets": [
+                {
+                    "name": "default.xml",
+                    "tokens": [
+                        {
+                            "xpath": "/TargetEndpoint/HTTPTargetConnection/URL",
+                            "value": "https://arnnabtripathy-prod.apigee.net/v1/party"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

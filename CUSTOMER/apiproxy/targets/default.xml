@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TargetEndpoint name="default">
+  <Description>Swagger test</Description>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <Flows/>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPTargetConnection>
+    <URL>https://localhost:10001/v2/customer</URL>
+  </HTTPTargetConnection>
+</TargetEndpoint>

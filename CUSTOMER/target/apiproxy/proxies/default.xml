@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><ProxyEndpoint name="default">
+  <Description>Swagger test</Description>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <Flows>
+    <Flow name="GET /customers">
+      <Condition>(proxy.pathsuffix MatchesPath "/customers") and (request.verb = "GET")</Condition>
+      <Description/>
+      <Request>
+        <Step>
+          <Name>spikearrest</Name>
+        </Step>
+        <Step>
+          <Name>apiquota</Name>
+        </Step>
+      </Request>
+      <Response/>
+    </Flow>
+    <Flow name="POST /customers">
+      <Condition>(proxy.pathsuffix MatchesPath "/customers") and (request.verb = "POST")</Condition>
+      <Description>Create a customer</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /customers/{ID}">
+      <Condition>(proxy.pathsuffix MatchesPath "/customers/{ID}") and (request.verb = "GET")</Condition>
+      <Description>Information for a specific customer</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPProxyConnection>
+    <BasePath>/v2/Customer</BasePath>
+    <VirtualHost>default</VirtualHost>
+    <VirtualHost>secure</VirtualHost>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

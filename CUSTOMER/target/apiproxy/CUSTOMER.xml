@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><APIProxy name="CUSTOMER" revison="1">
+  <CreatedAt>1482384848</CreatedAt>
+  <Description>Swagger test</Description>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>
